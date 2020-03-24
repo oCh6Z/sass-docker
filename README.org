@@ -1,3 +1,5 @@
 docker build --no-cache --build-arg NODE_VERSION=stretch-slim --build-arg GID_NAME=$(id -gn) --build-arg UID_NAME=$(id -un) --file Dockerfile --tag image-name:latest .
+
 docker run -it --volume $(pwd):/home/$(id -un) --name container-name image-id /bin/bash
+
 docker exec --user root -it container-id /bin/bash
